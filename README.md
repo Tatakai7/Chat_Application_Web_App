@@ -1,5 +1,5 @@
 # Chat Application 
-Messenger is a chat application build with the power of MERN Stack.
+CipherChat is a chat application build with the power of MERN Stack.
 
 
 ![login page](./screenshots/messenger.png)
