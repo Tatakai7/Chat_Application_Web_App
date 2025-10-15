@@ -1,5 +1,5 @@
-# Chat Application 
-CipherChat is a chat application build with the power of MERN Stack.
+# Chat Web Application 
+VaultTalk is a chat application build with the power of MERN Stack.
 
 
 ![login page](./screenshots/messenger.png)
