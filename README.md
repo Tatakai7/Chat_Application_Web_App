@@ -29,8 +29,8 @@
 Clone the repository and set up both **client** and **server**:
 
 ```bash
-git clone https://github.com/yourusername/chat-application.git
-cd chat-application
+git clone https://github.com/yourusername/Chat_Application_Web_App.git
+cd Chat_Application_Web_App
 ```
 
 ---
