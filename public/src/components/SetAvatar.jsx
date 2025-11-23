@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import loader from "../assets/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -74,11 +73,6 @@ export default function SetAvatar() {
 
   return (
     <>
-      {isLoading ? (
-        <Container>
-          <img src={loader} alt="loader" className="loader" />
-        </Container>
-      ) : (
         <Container>
           <div className="title-container">
             <h1>Pick an Avatar as your profile picture</h1>
@@ -104,7 +98,6 @@ export default function SetAvatar() {
           </button>
           <ToastContainer />
         </Container>
-      )}
     </>
   );
 }

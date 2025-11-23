@@ -56,9 +56,7 @@ export default function ChatContainer({ currentChat, socket }) {
     setMessages(msgs);
   };
 
-  // Fixed: Proper socket cleanup with current value captured in variable
   useEffect(() => {
-    // Capture the current socket value at the time the effect runs
     const currentSocket = socket.current;
     
     if (currentSocket) {
@@ -67,13 +65,12 @@ export default function ChatContainer({ currentChat, socket }) {
       });
     }
 
-    // Cleanup function uses the captured value
     return () => {
       if (currentSocket) {
         currentSocket.off("msg-recieve");
       }
     };
-  }, [socket]); // socket dependency is still needed
+  }, [socket]);
 
   useEffect(() => {
     arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);

@@ -14,9 +14,6 @@ export default function Welcome() {
   }, []);
   return (
     <Container>
-      {/* <h1>
-        Welcome, <span>{userName}!</span>
-      </h1> */}
       <h3>Please select a chat to Start messaging.</h3>
     </Container>
   );
