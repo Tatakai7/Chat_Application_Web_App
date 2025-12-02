@@ -105,4 +105,4 @@ Developers can freely fork, experiment, and submit pull requests to enhance the 
 ---
 
 📜 License
-This project is open-source and available under the GPL-3 License.
+This project is open-source and available under the GPL-3.0 License.
