@@ -1,0 +1,7 @@
+[build]
+  # Set a relative base directory (do NOT use absolute paths like /opt/build)
+  base = "public"
+  # The folder Netlify should publish from (relative to the base)
+  publish = "build"
+  # Build command to run inside the base directory
+  command = "npm run build"
