@@ -6,6 +6,11 @@ const messageRoutes = require("./routes/messages");
 
 const app = express();
 
+// Track online users for Socket.IO presence features
+if (!global.onlineUsers) {
+  global.onlineUsers = new Map();
+}
+
 // CORS configuration - update with your Netlify domain
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
@@ -36,6 +41,12 @@ app.get("/ping", (_req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+
+// Error handler to log exceptions and return JSON error responses
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: err.message || "Internal Server Error" });
+});
 
 // For Vercel serverless functions
 module.exports = app;
