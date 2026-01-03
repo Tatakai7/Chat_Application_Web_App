@@ -12,28 +12,33 @@ if (!global.onlineUsers) {
 }
 
 // CORS configuration - update with your Netlify domain
+// DEBUG NOTE: temporarily allow all origins to diagnose client 'Network Error'.
+// Remove or restrict this before deploying to production.
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://vault-talk.netlify.app'] // Replace with your actual Netlify URL
-    : ['http://localhost:3000'],
+  origin: '*',
   credentials: true,
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// MongoDB connection
-mongoose
-  .connect(process.env.MONGO_URL || process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("DB Connection Successful");
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
+// MongoDB connection (only if a connection URI is provided)
+const mongoUri = process.env.MONGO_URL || process.env.MONGODB_URI;
+if (mongoUri) {
+  mongoose
+    .connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => {
+      console.log("DB Connection Successful");
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+} else {
+  console.warn("No MongoDB URI provided - skipping DB connection (debug mode)");
+}
 
 app.get("/ping", (_req, res) => {
   return res.json({ msg: "Ping Successful" });
