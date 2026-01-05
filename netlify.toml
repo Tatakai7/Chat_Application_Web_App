@@ -5,3 +5,10 @@
   publish = "build"
   # Build command to run inside the base directory
   command = "npm run build"
+
+# Environment variables for the build. You can set `REACT_APP_API_URL` here
+# or in the Netlify web UI for the site. Replace the placeholder with your
+# backend HTTPS URL (example: https://api.example.com). Using HTTPS avoids
+# mixed-content errors when the frontend is served over HTTPS.
+[build.environment]
+  REACT_APP_API_URL = "https://your-backend.example"
