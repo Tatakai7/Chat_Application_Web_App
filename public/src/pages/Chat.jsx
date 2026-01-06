@@ -143,16 +143,18 @@ export default function Chat() {
 }
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
   background-color: ${(props) => props.theme.background};
+  /* center the app with a max width so very large screens stay readable */
   .dashboard-header {
-    width: 85vw;
+    max-width: 1200px;
+    width: calc(100% - 4rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,13 +171,30 @@ const Container = styled.div`
     }
   }
   .container {
-    height: 85vh;
-    width: 85vw;
+    height: calc(100vh - 140px);
+    max-width: 1200px;
+    width: calc(100% - 4rem);
     background-color: ${(props) => props.theme.panelBg};
     display: grid;
     grid-template-columns: 25% 75%;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
+    }
+  }
+  /* Small screens: stack contacts and chat vertically */
+  @media screen and (max-width: 720px) {
+    .dashboard-header {
+      width: 95vw;
+      padding: 0.5rem 0.5rem;
+    }
+    .container {
+      height: calc(100vh - 72px);
+      width: 95vw;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      padding: 0.25rem;
     }
   }
 `;

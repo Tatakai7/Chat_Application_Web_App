@@ -58,6 +58,11 @@ const Container = styled.div`
     padding: 0 1rem;
     gap: 1rem;
   }
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 10% 90%;
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
   .button-container {
     display: flex;
     align-items: center;
@@ -138,6 +143,23 @@ const Container = styled.div`
       svg {
         font-size: 2rem;
         color: white;
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .emoji .emoji-picker-react {
+      top: -300px;
+      right: 0;
+      left: auto;
+    }
+    .input-container {
+      gap: 1rem;
+      input {
+        font-size: 1rem;
+      }
+      button {
+        padding: 0.3rem 1rem;
+        svg { font-size: 1.25rem; }
       }
     }
   }

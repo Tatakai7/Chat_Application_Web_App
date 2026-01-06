@@ -146,6 +146,24 @@ const Container = styled.div`
       }
     }
   }
+  @media screen and (max-width: 720px) {
+    .chat-header {
+      padding: 0 1rem;
+      .user-details {
+        gap: 0.5rem;
+        .avatar img {
+          height: 2rem;
+        }
+        .username h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+    .chat-messages {
+      padding: 0.5rem 1rem;
+      gap: 0.5rem;
+    }
+  }
   .chat-messages {
     padding: 1rem 2rem;
     display: flex;
@@ -172,6 +190,11 @@ const Container = styled.div`
         color: ${(props) => props.theme.textPrimary};
         @media screen and (min-width: 720px) and (max-width: 1080px) {
           max-width: 70%;
+        }
+        @media screen and (max-width: 720px) {
+          max-width: 85%;
+          font-size: 1rem;
+          padding: 0.75rem;
         }
       }
     }

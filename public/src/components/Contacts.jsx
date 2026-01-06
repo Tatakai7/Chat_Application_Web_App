@@ -131,4 +131,22 @@ const Container = styled.div`
       background-color: #9a86f3;
     }
   }
+  @media screen and (max-width: 720px) {
+    .brand img {
+      height: 1.6rem;
+    }
+    .brand h3 {
+      font-size: 1rem;
+    }
+    .contacts {
+      gap: 0.5rem;
+      .contact {
+        min-height: 4rem;
+        width: 100%;
+        padding: 0.3rem;
+        .avatar img { height: 2.2rem; }
+        .username h3 { font-size: 0.95rem; }
+      }
+    }
+  }
 `;

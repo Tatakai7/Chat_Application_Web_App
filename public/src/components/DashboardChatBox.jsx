@@ -58,7 +58,7 @@ const Box = styled.div`
     font-weight: 600;
   }
   .body {
-    flex: 1;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -71,6 +71,12 @@ const Box = styled.div`
     flex-direction: column;
     gap: 0.5rem;
     &::-webkit-scrollbar {
+  @media screen and (max-width: 720px) {
+    .bubble { max-width: 90%; }
+    .form { flex-direction: row; max-width: 100%; }
+    .input { padding: 0.6rem; }
+    .send { padding: 0.6rem 0.8rem; }
+  }
       width: 0.2rem;
       &-thumb {
         background-color: #ffffff39;
@@ -95,7 +101,8 @@ const Box = styled.div`
     display: flex;
     gap: 0.5rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    align-items: center;
   }
   .input {
     flex: 1;

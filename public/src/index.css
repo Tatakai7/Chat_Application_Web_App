@@ -13,9 +13,13 @@ input {
 }
 
 body {
-  max-height: 100vh;
-  max-width: 100vw;
-  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  /* allow the layout to determine width so pages can be fluid */
+  width: 100%;
+  /* enable scrolling when content exceeds viewport on any screen */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .Toastify__toast-theme--dark {
