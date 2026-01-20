@@ -15,7 +15,7 @@ if (!global.onlineUsers) {
 // DEBUG NOTE: temporarily allow all origins to diagnose client 'Network Error'.
 // Remove or restrict this before deploying to production.
 const corsOptions = {
-  origin: '*',
+  origin: 'https://vault-talk-chat.netlify.app',
   credentials: true,
 };
 
